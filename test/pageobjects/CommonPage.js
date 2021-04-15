@@ -1,22 +1,26 @@
-const base = require('../Base/Base')
+const base = require('../Base/Base');
 
-class CommonPage{
+class CommonPage {
+	get moreMenu() {
+		return $('.bm-burger-button');
+	}
+	get logoutOption() {
+		return $('#logout_sidebar_link');
+	}
+	get cartIcon() {
+		return $('.shopping_cart_link');
+	}
 
-    get moreMenu() {return $('.bm-burger-button')}
-    get logoutOption() {return $('#logout_sidebar_link')}
-    get cartIcon() {return $('svg[data-icon="shopping-cart"]')}
+	clickMoreMenu() {
+		base.doClick(this.moreMenu);
+	}
 
+	clickLogoutOption() {
+		base.doClick(this.logoutOption);
+	}
 
-    clickMoreMenu(){
-        base.doClick(this.moreMenu)
-    }
-
-    clickLogoutOption(){
-        base.doClick(this.logoutOption)
-    }
-
-    clickCartIcon(){
-        base.doClick(this.cartIcon)
-    }
+	clickCartIcon() {
+		base.doClick(this.cartIcon);
+	}
 }
-module.exports = new CommonPage()
+module.exports = new CommonPage();

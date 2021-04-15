@@ -1,18 +1,12 @@
-const { assert } = require("chai")
+const { assert, expect } = require('chai');
 
-class CheckoutCompletePage{
+class CheckoutCompletePage {
+	get thankyouText() {
+		return $('//h2[@class="complete-header"]');
+	}
 
-    get thankyouText() {return $('//h2[@class="complete-header"]')}
-
-    verifyThankyou(text){
-        if(text==='THANK YOU FOR YOUR ORDER'){
-            console.log(`The text contains the value ${text}`)
-        }
-        else{
-            console.log(`The text doesn't contains the value ${text}`)
-            assert.fail()
-        }
-    }
-
+	verifyThankyou(text) {
+		expect(text).to.equal('THANK YOU FOR YOUR ORDER');
+	}
 }
-module.exports = new CheckoutCompletePage()
+module.exports = new CheckoutCompletePage();

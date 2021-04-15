@@ -1,25 +1,22 @@
-class Base{
+class Base {
+	doClick(element) {
+		element.waitForDisplayed();
+		element.click();
+	}
 
-    doClick(element){
-        element.waitForDisplayed()
-        element.click()
-    }
+	doSetValue(element, text) {
+		element.waitForDisplayed();
+		element.setValue(text);
+	}
 
-    doSetValue(element,text){
-        element.waitForDisplayed()
-        element.setValue(text)
-    }
+	doIsDisplayed(element) {
+		element.waitForDisplayed();
+		return element.isDisplayed();
+	}
 
-    doIsDisplayed(element){
-        element.waitForDisplayed()
-        return element.isDisplayed()
-    }
-
-    doGetText(element){
-        element.waitForDisplayed()
-        return element.getText()
-    }
-
-
+	doGetText(element) {
+		element.waitForDisplayed();
+		return element.getText();
+	}
 }
-module.exports = new Base()
+module.exports = new Base();
