@@ -1,5 +1,5 @@
 const drivers = {
-	chrome: { version: '86.0.4240.22' }, // https://chromedriver.chromium.org/
+	chrome: { version: '88.0' }, // https://chromedriver.chromium.org/
 	firefox: { version: '0.27.0' }, // https://github.com/mozilla/geckodriver/releases
 	chromiumedge: { version: '85.0.564.70' }, // https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 };
@@ -13,6 +13,7 @@ exports.config = {
 	// WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
 	// on a remote machine).
 	runner: 'local',
+	port: 4444,
 	//
 	// ==================
 	// Specify Test Files
@@ -114,6 +115,7 @@ exports.config = {
 	// Services take over a specific job you don't want to take care of. They enhance
 	// your test setup with almost no effort. Unlike plugins, they don't add new
 	// commands. Instead, they hook themselves up into the test process.
+	//services: [['selenium-standalone', { drivers }]],
 	services: ['chromedriver'],
 
 	// Framework you want to run your specs with.
